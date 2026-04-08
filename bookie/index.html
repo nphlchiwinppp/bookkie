@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Our 1 Month Anniversary Scrapbook</title>
+  <meta name="description" content="เว็บไซต์สครัปบุ๊กวันครบรอบ 1 เดือน – เทมเพลตสำหรับใส่รูปและข้อความน่ารัก ๆ พร้อมแอนิเมชัน" />
+
+  <!-- Fonts (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600&family=Noto+Sans+Thai:wght@300;400;600&family=Noto+Serif+Thai:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- GSAP + ScrollTrigger (CDN) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Anime.js (UMD global) - for SVG morph (optional) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">ข้ามไปยังเนื้อหาหลัก</a>
+
+  <!-- Background layers -->
+  <div class="backdrop" aria-hidden="true"></div>
+  <canvas id="sparkles" class="sparkles" aria-hidden="true"></canvas>
+
+  <!-- Floating controls -->
+  <div class="floating-ui" aria-label="เครื่องมือควบคุม">
+    <button id="audioToggle" class="ui-btn" type="button" aria-pressed="false" aria-label="เปิดเพลงพื้นหลัง">
+      <span class="ui-btn__icon" aria-hidden="true">🔈</span>
+      <span class="ui-btn__text">Music</span>
+    </button>
+
+    <button id="motionToggle" class="ui-btn" type="button" aria-pressed="false" aria-label="ลดแอนิเมชัน">
+      <span class="ui-btn__icon" aria-hidden="true">🌀</span>
+      <span class="ui-btn__text">Motion</span>
+    </button>
+  </div>
+
+  <!-- Background music -->
+  <audio id="bgMusic" preload="none" loop>
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <main id="main">
+    <!-- HERO -->
+    <header class="section hero" id="hero">
+      <div class="container hero__container">
+        <p class="eyebrow">pov:</p>
+        <h1 class="hero__title">it’s officially our 1 month, babe 💌✨</h1>
+        <p class="hero__subtitle handwritten">
+          one month down, and i’m still sooo obsessed with you fr 🫶🥹
+        </p>
+
+        <div class="hero__stage" role="img" aria-label="ฉากสครัปบุ๊กบนพื้นผ้าสีดำ มีซองจดหมาย กล้องถ่ายรูป และช่อดอกไม้">
+          <div class="prop prop--envelope float-slow reveal" data-reveal="fade-up">
+            <img src="assets/envelope2.png" alt="" />
+          </div>
+
+          <div class="prop prop--camera float-fast reveal" data-reveal="fade-up" data-delay="0.08">
+            <img src="assets/camera2.png" alt="" />
+            <span class="glint" aria-hidden="true"></span>
+          </div>
+
+          <div class="prop prop--bouquet float-med reveal" data-reveal="fade-up" data-delay="0.16">
+            <img src="assets/bouquet.png" alt="" />
+          </div>
+
+          <div class="scroll-hint" aria-hidden="true">
+            <span class="scroll-hint__line"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- OPEN BOOK / CARD -->
+    <section class="section album" id="album" aria-labelledby="album-title">
+      <div class="container">
+        <h2 id="album-title" class="section-title">our little love book</h2>
+
+        <div class="book reveal" data-reveal="zoom-in">
+          <img class="book__tag" src="assets/tag-star.png" alt="" aria-hidden="true" />
+
+          <div class="page page--left">
+            <div class="page__content">
+              <figure class="cutout">
+                <img src="assets/photo-child.jpg" alt="รูปภาพความทรงจำของเรา" loading="lazy" width="640" height="640" />
+                <figcaption class="handwritten cutout__caption">
+                  “1 month with you = my fav flex 💖”
+                </figcaption>
+              </figure>
+
+              <p class="page__text handwritten">
+                happy 1 month anniversary, baby 💕<br/>
+                lowkey the best month of my life ‘cause i got you 🥹✨
+              </p>
+
+              <div class="scribble" aria-hidden="true">1M</div>
+            </div>
+          </div>
+
+          <div class="spine" aria-hidden="true"></div>
+
+          <div class="page page--right">
+            <div class="page__content">
+              <figure class="polaroid polaroid--note">
+                <img src="assets/photo-polaroid.jpg" alt="รูปภาพโพลารอยด์คู่รัก" loading="lazy" width="640" height="800" />
+                <figcaption class="polaroid__caption handwritten">still crushing on you 😚</figcaption>
+              </figure>
+
+              <p class="page__text handwritten">
+                one month in and you’re still my favorite notification 📱💘<br/>
+                no cap, you make everything feel softer and happier
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="section-note handwritten">เลื่อนลงต่อจิ💭</p>
+      </div>
+    </section>
+
+    <!-- MEMORIES COLLAGE -->
+    <section class="section memories" id="memories" aria-labelledby="memories-title">
+      <div class="container">
+        <h2 id="memories-title" class="section-title section-title--light">
+          1 month, a million butterflies, and way too many cute moments
+        </h2>
+
+        <div class="masonry">
+          <article class="memory reveal" data-reveal="fade-up" style="--r:-2deg;" data-parallax="0.10">
+            <img class="memory__img" src="assets/memory-1.jpg" alt="ภาพความทรงจำ 1" loading="lazy" width="900" height="700" />
+            <p class="memory__text handwritten">โทรคุยกับพี่บุ๊คครั้งแรก เขินง่ะ แต่เคยขอคอลไปครั้งนึงนางบอกคิวพี่เยอะต้องต่อคิว ช็อตนั้นเจ้าชู้เลยอยากเลิกจีบ</p>
+          </article>
+
+          <article class="memory reveal" data-reveal="fade-up" style="--r:2deg;" data-delay="0.05" data-parallax="0.16">
+            <img class="memory__img" src="assets/memory-2.jpg" alt="ภาพความทรงจำ 2" loading="lazy" width="900" height="700" />
+            <p class="memory__text handwritten">ชวนพี่บุ๊คมาดูหนังด้วยกันครั้งแรก แล้วเป็นการเจอครั้งแรกโด้ย น่ารักเนอะ ชวนปุ้ปมาปั้ปทัชใจ นี่แหละสเปคเยย</p>
+          </article>
+
+          <article class="memory memory--wide reveal" data-reveal="fade-up" style="--r:1deg;" data-delay="0.10" data-parallax="0.12">
+            <img class="memory__img" src="assets/memory-3.jpg" alt="ภาพความทรงจำ 3" loading="lazy" width="1200" height="700" />
+            <p class="memory__text handwritten">ช็อตนี้เกือบตาย</p>
+          </article>
+
+          <article class="memory reveal" data-reveal="fade-up" style="--r:-1deg;" data-delay="0.03" data-parallax="0.18">
+            <img class="memory__img" src="assets/memory-4.jpg" alt="ภาพความทรงจำ 4" loading="lazy" width="900" height="700" />
+            <p class="memory__text handwritten">รูปเซลฟี่รูปแรก แฟนหนูน่ารักจัง</p>
+          </article>
+
+          <article class="memory reveal" data-reveal="fade-up" style="--r:3deg;" data-delay="0.12" data-parallax="0.10">
+            <img class="memory__img" src="assets/memory-5.jpg" alt="ภาพความทรงจำ 5" loading="lazy" width="900" height="700" />
+            <p class="memory__text handwritten">พาพี่บุ๊คมาเปิดตัวกับพี่ทำงาน ตัวติดเทอเป็นตังเมเยยแหะ</p>
+          </article>
+
+          <article class="memory reveal" data-reveal="fade-up" style="--r:-3deg;" data-delay="0.16" data-parallax="0.14">
+            <img class="memory__img" src="assets/memory-6.jpg" alt="ภาพความทรงจำ 6" loading="lazy" width="900" height="700" />
+            <p class="memory__text handwritten">ในที่สุดก็ได้เป็นแฟนแยะ คนนี้แหละที่เล็งมาตั้งแต่ปีหนึ่ง ตอนนี้เป็นของน้องปรายแล้วอิอิ</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL LETTER -->
+    <section class="section letter" id="letter" aria-labelledby="letter-title">
+      <div class="container">
+        <h2 id="letter-title" class="section-title">a lil letter for you 💌</h2>
+
+        <div class="letter-board">
+          <img class="letter-board__decor letter-board__decor--lily reveal" data-reveal="fade-up" src="assets/lily.png" alt="" aria-hidden="true" />
+          <img class="letter-board__decor letter-board__decor--teddy reveal" data-reveal="fade-up" data-delay="0.10" src="assets/teddy.png" alt="" aria-hidden="true" />
+
+          <figure class="letter-card reveal" data-reveal="fade-up">
+            <svg class="letter-card__bow" width="46" height="46" viewBox="0 0 64 64" aria-hidden="true">
+              <path id="bowA" d="M32 18c-7 0-12 5-12 11 0 8 8 9 12 9s12-1 12-9c0-6-5-11-12-11Zm0 0c6-5 12-7 18-4 6 3 6 10 0 14-4 3-10 5-18 6m0-16c-6-5-12-7-18-4-6 3-6 10 0 14 4 3 10 5 18 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path id="bowB" d="M32 10c-10 0-18 8-18 18 0 7 3 13 8 17l10 9 10-9c5-4 8-10 8-17 0-10-8-18-18-18Zm0 10c3-4 8-7 13-7 6 0 11 5 11 11 0 5-3 9-6 11-5 3-12 6-18 7m0-22c-3-4-8-7-13-7-6 0-11 5-11 11 0 5 3 9 6 11 5 3 12 6 18 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0"/>
+            </svg>
+
+            <!-- Accessible full text (screen readers read this; typing version is aria-hidden) -->
+            <p class="sr-only" id="letter-fulltext">
+              happy one month, baby 🫶
+              i know it’s only been a month, but wow… you already mean so much to me.
+              thank you for being so cute, so sweet, and so you.
+              every little moment with you makes my heart go !!! 💘
+              i really, really like what we have, and i can’t wait for more memories, more laughs, and more us.
+              still into you. still choosing you. still smiling because of you.
+              ily sm 🥹✨
+            </p>
+
+            <!-- Typed on screen -->
+            <p class="letter-card__text handwritten" aria-hidden="true" data-typewriter data-source="#letter-fulltext"></p>
+          </figure>
+
+          <figure class="polaroid polaroid--right reveal" data-reveal="fade-up" data-delay="0.12">
+            <img src="assets/photo-final.png" alt="รูปภาพคู่ในกรอบโพลารอยด์" loading="lazy" width="640" height="800" />
+            <figcaption class="polaroid__caption handwritten">us after 1 month = still cute af 💞</figcaption>
+          </figure>
+        </div>
+
+        <footer class="footer">
+          <p class="footer__small">
+            made with love 💛 · <span class="handwritten">our first month, but definitely not the last ✨</span>
+          </p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <noscript>
+    <div class="noscript">
+      เว็บไซต์นี้มีแอนิเมชันด้วย JavaScript แต่คุณยังดูเนื้อหาได้ (เพียงบางเอฟเฟกต์จะไม่ทำงาน)
+    </div>
+  </noscript>
+</body>
+</html>
